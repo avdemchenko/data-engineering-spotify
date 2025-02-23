@@ -1,0 +1,10 @@
+terraform/*.json
+
+terraform/.terraform/
+terraform/.terraform.lock.hcl
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+terraform/crash.log
+
+
+.DS_Store
