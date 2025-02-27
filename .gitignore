@@ -8,3 +8,5 @@ terraform/crash.log
 
 
 .DS_Store
+.env
+.idea/
