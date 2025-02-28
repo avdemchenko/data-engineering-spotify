@@ -1,0 +1,82 @@
+version: 2
+
+models:
+  - name: spotify_music_analysis
+    description: "Enriched Spotify tracks with musical key descriptions and mood analysis"
+    columns:
+      - name: name
+        description: "Track name"
+      - name: album
+        description: "Album name"
+      - name: artists
+        description: "Artist name(s)"
+      - name: explicit
+        description: "Whether the track has explicit content or not"
+      - name: song_id
+        description: "Unique identifier for the song"
+      - name: danceability
+        description: "How suitable a track is for dancing (0.0 to 1.0)"
+        tests:
+          - not_null
+      - name: energy
+        description: "Measure of intensity and activity (0.0 to 1.0)"
+        tests:
+          - not_null
+      - name: key_description
+        description: "Musical key in standard notation (C, C#/Db, D, etc.)"
+        tests:
+          - not_null
+      - name: loudness
+        description: "Overall loudness in decibels (dB)"
+        tests:
+          - not_null
+      - name: modality_description 
+        description: "Whether the track is in a major or minor key"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Major', 'Minor', 'Unknown']
+      - name: speechiness
+        description: "Presence of spoken words (0.0 to 1.0)"
+        tests:
+          - not_null
+      - name: acousticness
+        description: "Confidence measure of whether the track is acoustic (0.0 to 1.0)"
+        tests:
+          - not_null
+      - name: instrumentalness
+        description: "Predicts whether a track contains no vocals (0.0 to 1.0)"
+        tests:
+          - not_null
+      - name: liveness
+        description: "Detects presence of audience (0.0 to 1.0)"
+        tests:
+          - not_null
+      - name: valence
+        description: "Musical positiveness conveyed by a track (0.0 to 1.0)"
+        tests:
+          - not_null
+      - name: tempo
+        description: "Estimated tempo in beats per minute (BPM)"
+        tests:
+          - not_null
+      - name: duration_s
+        description: "Duration in seconds"
+        tests:
+          - not_null
+      - name: release_year
+        description: "Year the track was released"
+        tests:
+          - not_null
+      - name: release_date
+        description: "Full release date of the track"
+      - name: primary_artist
+        description: "Main artist of the track"
+      - name: decade
+        description: "Named decade the track was released in"
+      - name: mood
+        description: "Categorization of track as Happy, Sad, or Ambivalent based on valence"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Happy', 'Sad', 'Ambivalent']

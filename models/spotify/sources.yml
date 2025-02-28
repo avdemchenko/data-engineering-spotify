@@ -1,0 +1,46 @@
+version: 2
+
+sources:
+  - name: spotify
+    database: data-engineering-spotify  # GCP project ID
+    schema: spotify  # Updated to match your actual dataset name
+    description: "Source data from Spotify tracks and audio features"
+    tables:
+      - name: cleaned_tracks_features
+        description: >
+          Cleaned dataset containing Spotify tracks with their audio features
+        columns:
+          - name: name
+            description: "Track name"
+          - name: album
+            description: "Album name"
+          - name: artists
+            description: "Artist name(s)"
+          - name: explicit
+            description: "Whether the track has explicit content or not"
+          - name: danceability
+            description: "How suitable a track is for dancing (0.0 to 1.0)"
+          - name: energy
+            description: "Measure of intensity and activity (0.0 to 1.0)"
+          - name: key
+            description: "The key the track is in, integer mapped to pitch class notation"
+          - name: loudness
+            description: "Overall loudness in decibels (dB)"
+          - name: mode
+            description: "Modality of the track (major or minor)"
+          - name: speechiness
+            description: "Presence of spoken words (0.0 to 1.0)"
+          - name: acousticness
+            description: "Confidence measure of whether the track is acoustic (0.0 to 1.0)"
+          - name: instrumentalness
+            description: "Predicts whether a track contains no vocals (0.0 to 1.0)"
+          - name: liveness
+            description: "Detects presence of audience (0.0 to 1.0)"
+          - name: valence
+            description: "Musical positiveness conveyed by a track (0.0 to 1.0)"
+          - name: tempo
+            description: "Estimated tempo in beats per minute (BPM)"
+          - name: duration_s
+            description: "Duration in seconds"
+          - name: year_date
+            description: "Release date in YYYY-MM-DD format"
